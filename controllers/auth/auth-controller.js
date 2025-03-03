@@ -43,7 +43,9 @@ export const loginUser = async (req, res) => {
         const checkPasswordMatch = await bcrypt.compare(password, checkUser.password);
         if (!checkPasswordMatch) return res.json({ success: false, message: "Invalid Password"});
 
-        const token = jwt.sign({id: checkUser._id, role : checkUser.role, email: checkUser.email },'CLIENT_SECRET_KEY',{expiresIn : '60m'});
+        const token = jwt.sign({
+            id: checkUser._id, role : checkUser.role, email: checkUser.email },
+            'CLIENT_SECRET_KEY',{expiresIn : '60m'});
         
         res.cookie('token', token, { httpOnly: true, secure : false }).json({
             success: true,
@@ -72,7 +74,6 @@ export const logoutUser = async (req, res) => {
         message: "Logout successful"
     });
 };
-
 
 //Auth controller
 
