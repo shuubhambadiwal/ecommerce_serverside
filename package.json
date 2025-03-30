@@ -5,8 +5,7 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "vercel dev"
+    "dev": "nodemon server.js"
   },
   "author": "Shubham Badiwal",
   "license": "ISC",

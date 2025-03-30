@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5001;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://https://ecomject.vercel.app",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -55,6 +55,11 @@ app.use("/api/shop/order", shopOrderRouter);
 app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 app.use("/api/common/feature", commonFeatureRouter);
+
+app.get("/", (req, res) => {
+  res.json("Welcome to the E-commerce API");
+}
+);
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
 
