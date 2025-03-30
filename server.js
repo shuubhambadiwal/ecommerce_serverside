@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5001;
 
 app.use(
   cors({
-    origin: "https://ecomject.vercel.app",
+    origin: "https://ecomject.vercel.app" || "http://localhost:5173",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
